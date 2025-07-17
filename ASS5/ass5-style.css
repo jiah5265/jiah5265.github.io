@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    }
+
+html {
+    font-family: sans-serif;
+    }
+
+body {
+    margin: 0;
+    background: #000;
+    }
+
+section {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    }
+
+#background {
+    width: 100%;
+    display: block;
+    }
+
+#score {
+    position: absolute;
+    top: 20px;
+    left: 22.55%;
+    background: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 1px black;
+    }
+
+#score1 {
+    color: red;
+    }
+
+#score2 {
+    color: blue;
+    }
+
+#score span {
+    margin: 0 20px;
+    }
+
+#overlay {
+    margin: 0 10px;
+    }
