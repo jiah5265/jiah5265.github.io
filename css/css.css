@@ -11,31 +11,37 @@ body{
 @media (max-width: 400px) {
     body {
         font-size: 14px;
-        padding: 0 50px;
+        padding: 0 20px;
     }
 }
 
 @media (max-width: 1500px) {
     body {
-        font-size: 2vw;
+        font-size: 22px;
+        padding: 0 40px;
     }
 }
 
 
 #grid-parent{
-    font-size: 50%;
+    font-size: 60%;
     display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: 80px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 #grid-parent h1{
+    background-color: grey;
+    color: white;
     max-width: 600px;
     max-height: 300px;
-    background-color: grey;
-    margin: 10px;
+    display: flex;
     text-align: center;
-    color: white;
+    justify-content: center;
+    
 }
 
 #no1{
