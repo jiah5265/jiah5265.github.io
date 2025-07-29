@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            font-family: san-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid chartreuse;
+            background-color: pink;
+            box-shadow: 1px 1px 2px rgb(0, 0, 200 / 40%);
+            border-radius: 10px;
+            padding: 3px 10px;
+            cursor: pointer;
+            height: 50px;
+            width: auto;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button">Player 1: Isaac</button>
+
+    <script>
+        let x = 1;
+        consol.log(x);
+
+        const btn = document.querySelector("button");
+        btn.addEventListener('click', updateName);
+
+        function updateName() {
+            const name = prompt("Enter a new name!");
+            btn.textContent = 'Player 1: ${name}';
+            console.log('test output');
+        }
+
+    </script>
+        <script src="day10.js"></script>
+</body>
+</html>
