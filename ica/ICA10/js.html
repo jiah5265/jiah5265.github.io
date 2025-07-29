@@ -22,22 +22,28 @@
     </style>
 </head>
 <body>
-    <button type="button">Player 1: Isaac</button>
+    <button id="namebtn">Player 1: Isaac</button>
+    <button id="colorbtn">Change Color</button>
 
     <script>
-        let x = 1;
-        consol.log(x);
+        const namebtn = document.querySelector("#namebtn");
+        namebtn.addEventListener('click', updatebtn);
+        const colorbtn = document.querySelector("#colorbtn");
+        colorbtn.addEventListener('click', changebtn);
 
-        const btn = document.querySelector("button");
-        btn.addEventListener('click', updateName);
-
-        function updateName() {
+        function updatebtn() {
             const name = prompt("Enter a new name!");
-            btn.textContent = 'Player 1: ${name}';
-            console.log('test output');
+            namebtn.textContent = 'Player 1: ${name}';
         }
 
+        function changebtn() {
+            const color = ["red", "orange", "yellow"];
+            const randomIndex = Math.floor(Math.random() * colors[randomIndex]);
+            document.body.style.backgoundColor = colors[randomIndex];
+        }
+
+
     </script>
-        <script src="day10.js"></script>
+        <script src="ica/ICA10/day10.js"></script>
 </body>
 </html>
