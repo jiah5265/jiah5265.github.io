@@ -33,17 +33,16 @@
 
         function updatebtn() {
             const name = prompt("Enter a new name!");
-            namebtn.textContent = 'Player 1: ${name}';
+            namebtn.textContent = `Player 1: ${name}`;
         }
 
         function changebtn() {
-            const color = ["red", "orange", "yellow"];
-            const randomIndex = Math.floor(Math.random() * colors[randomIndex]);
-            document.body.style.backgoundColor = colors[randomIndex];
+            const colors = ["red", "orange", "yellow"];
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            document.body.style.backgroundColor = colors[randomIndex];
         }
 
 
     </script>
-        <script src="ica/ICA10/day10.js"></script>
 </body>
 </html>
