@@ -9,7 +9,13 @@
     <style>
       body {
         font-family: helvetica, sans-serif;
-        width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0 10px;
       }
 
       label {
@@ -18,18 +24,25 @@
 
       div {
         padding-bottom: 20px;
+        width: 100%;
+        max-width: 350px;
       }
 
       input[type="text"] {
         padding: 5px;
-        width: 150px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: gray;
       }
 
       p {
-        background: #ffc125;
-        color: #5e2612;
+        background: lightblue;
+        color: black;
         padding: 10px;
         visibility: hidden;
+      }
+      button.randomize:hover {
+      background-color: red;
       }
     </style>
 </head>
