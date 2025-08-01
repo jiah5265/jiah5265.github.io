@@ -128,3 +128,8 @@ html {
     margin-bottom: 0;
     padding-bottom: 0;
   }
+  .saved-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }

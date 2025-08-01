@@ -1,9 +1,9 @@
 
 const newQuote = document.querySelector('#js-new-quote');
-//const answerBtn = document.querySelector('#js-tweet');
+const saveBtn = document.querySelector('#js-tweet');
 
 newQuote.addEventListener('click', getCat);
-//answerBtn.addEventListener('click', displayAnswer);
+saveBtn.addEventListener('click', saveCatImage);
 
 const endpoint = "https://api.thecatapi.com/v1/images/search";
 
@@ -33,16 +33,26 @@ async function getCat() {
         quoteArea.textContent = '';
     }
 }
+//ex
+function saveCatImage() {
+    const CatImage = document.querySelector('#js-cat-image');
+    const savedImagesContainer = document.querySelector('#saved-images');
+    if (!CatImage.src) return;
 
-//function displayAnswer() {
-    //const answerText = json.answer;
-    //const answerArea = document.querySelector('#js-answer-text');
-    //answerArea.textContent = answerText;
-//}
+    const savedImg = document.createElement('img');
+    savedImg.src = CatImage.src;
+    savedImg.style.width = '240px'; 
+    savedImg.style.height = '140px';
+    savedImg.style.borderRadius = '10px';
+    savedImg.style.objectFit = 'cover';
 
+    savedImagesContainer.appendChild(savedImg);
+}
+//ex
 function displayQuote(quote) {
     const quoteText = document.querySelector('#js-quote-text');
     quoteText.textContent = quote;
 }
 
 getCat();
+
