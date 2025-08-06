@@ -1,0 +1,126 @@
+html, body { 
+    color: black;
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guide, .morse {
+    box-sizing: border-box;
+}
+
+.guide {
+    color: black;
+    background-color: lightgrey;
+    border: 5px black;
+    width: 300px;
+    height: 400px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+.guideline {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.dots {
+    color: red;
+    margin-right: 4px;
+}
+
+.dashes {
+    color: red;
+    font-weight: bold;
+    letter-spacing: 2.7px;
+}
+
+
+
+.morse {
+    background-color: darkgrey;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instruction, .record, .number {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.gaugeBar {
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.gaugeFill {
+    height: 100%;
+    width: 0%;
+    background-color: green;
+    transition: width 0.05 linear;
+}
+
+.gaugeMid {
+    background-color: grey;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+#pressBtn {
+    color: white;
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#pressBtn:active, #pressBtn:hover {
+    background-color: lightcoral;
+}
+
+#resetBtn {
+    color: black;
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#resetBtn:hover {
+    background-color: grey;
+}
+
+.gauge {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
