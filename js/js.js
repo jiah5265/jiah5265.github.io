@@ -4,6 +4,8 @@ const gaugeFill = document.querySelector(".gaugeFill");
 const instruction = document.querySelector(".instruction");
 const record = document.querySelector(".record");
 const number = document.querySelector(".number");
+const recDel = document.getElementById("recDel");
+const numDel = document.getElementById("numDel");
 
 let time;//place for data
 let morseSignal = [];
@@ -36,9 +38,20 @@ function stopGauge() {//when releasing button
 
     if (morseSignal.length == 5) {
         const morseStr = morseSignal.join("");
-        phoneNumber += morseToDigit(morseStr);
-        number.textContent = "Phone Number: " + phoneNumber;
-        morseSignal = [];
+        const digit = morseToDigit(morseStr);
+
+        if (digit === null) {
+            instruction.textContent = "Invalid Morse Code!";
+        } else if (phoneNumber.length < 10) {
+            phoneNumber += digit;
+            number.textContent = "Phone Number: " + phoneNumber;
+
+            const guideBox = document.querySelector(".guide");
+            const opacity = Math.min(phoneNumber.length * 0.01, 1);
+            guideBox.style.opacity = opacity;
+        }
+
+    morseSignal = [];
     }
 }
 
@@ -55,7 +68,7 @@ function morseToDigit(seq) {//changing morse to number
         "----●": "9",
         "-----": "0",
     };
-    return morseList[seq] || "";
+    return morseList[seq] || null;
 }
 
 
@@ -80,4 +93,18 @@ resetBtn.addEventListener("click", () => {
     record.textContent = "[]";
     number.textContent = "Phone Number: ";
     gaugeFill.style.width = "0%";
+    document.querySelector(".guide").style.opacity = 0;
+});
+
+recDel.addEventListener("click", () => {
+    morseSignal.pop();
+    record.textContent = "[" + morseSignal.join(" ") + "]";
+});
+
+numDel.addEventListener("click", () => {
+    phoneNumber = phoneNumber.slice(0, -1);
+    number.textContent = "Phone Number: " + phoneNumber;
+    const guideBox = document.querySelector(".guide");
+    const opacity = Math.min(phoneNumber.length * 0.01, 1);
+    guideBox.style.opacity = opacity;
 });
