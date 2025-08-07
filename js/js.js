@@ -77,7 +77,6 @@ function morseToDigit(seq) {//changing morse to number
 
 
 
-
 let pressBtnPressed = false;
 
 pressBtn.addEventListener("mousedown", () => {
@@ -126,7 +125,7 @@ function updateSubmitButton() {
 
 submitBtn.addEventListener("click", () => {
     document.body.innerHTML = "Thank you for your phone number!";
-    
+
     const thankYouDiv = document.createElement("div");
     thankYouDiv.style.fontSize = "3rem";
     document.body.appendChild(thankYouDiv);
