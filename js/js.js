@@ -6,12 +6,13 @@ const record = document.querySelector(".record");
 const number = document.querySelector(".number");
 const recDel = document.getElementById("recDel");
 const numDel = document.getElementById("numDel");
+const submitBtn = document.getElementById("submitBtn");
 
 let time;//place for data
 let morseSignal = [];
 let phoneNumber = "";
 
-
+submitBtn.style.display = "none";
 
 function startGauge() {//when pressing button
     time = Date.now();
@@ -40,7 +41,7 @@ function stopGauge() {//when releasing button
         const morseStr = morseSignal.join("");
         const digit = morseToDigit(morseStr);
 
-        if (digit === null) {
+        if (digit == null) {
             instruction.textContent = "Invalid Morse Code!";
         } else if (phoneNumber.length < 10) {
             phoneNumber += digit;
@@ -49,6 +50,8 @@ function stopGauge() {//when releasing button
             const guideBox = document.querySelector(".guide");
             const opacity = Math.min(phoneNumber.length * 0.01, 1);
             guideBox.style.opacity = opacity;
+
+            updateSubmitButton();
         }
 
     morseSignal = [];
@@ -107,4 +110,25 @@ numDel.addEventListener("click", () => {
     const guideBox = document.querySelector(".guide");
     const opacity = Math.min(phoneNumber.length * 0.01, 1);
     guideBox.style.opacity = opacity;
+
+    updateSubmitButton();
+});
+
+
+
+function updateSubmitButton() {
+    if (phoneNumber.length == 10) {
+        submitBtn.style.display = "block";
+    } else {
+        submitBtn.style.display = "none";
+    }
+}
+
+submitBtn.addEventListener("click", () => {
+    document.body.innerHTML = "Thank you for your phone number!";
+    
+    const thankYouDiv = document.createElement("div");
+    thankYouDiv.style.fontSize = "3rem";
+    document.body.appendChild(thankYouDiv);
+    
 });
