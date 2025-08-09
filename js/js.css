@@ -4,10 +4,6 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .guide, .morse {
@@ -17,10 +13,14 @@ html, body {
 .guide {
     color: black;
     background-color: lightgrey;
-    border: 5px black;
+    border: 10px solid darkgray;
+    border-radius: 10px;
     width: 300px;
     height: 400px;
     padding: 30px;
+
+    position: absolute;
+    transition: top 0.8s ease, left 0.8s ease;
 
     display: flex;
     flex-direction: column;
@@ -47,11 +47,21 @@ html, body {
 
 
 .morse {
-    background-color: darkgrey;
+    background-color: #1C1C1C;
     width: 220px;
+    height: auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    padding: 20px;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .instruction, .record, .number {
@@ -59,10 +69,17 @@ html, body {
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.5rem;
+
+    color: green;
+    background-color: black;
+    border: 3px solid darkgray;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .gaugeBar {
-    background-color: white;
+    background-color: black;
+    border: 3px solid darkgray;
     width: 200px;
     height: 40px;
     margin-bottom: 20px;
@@ -91,10 +108,10 @@ html, body {
 #pressBtn {
     color: white;
     background-color: red;
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: none;
+    border: 2px solid black;
     cursor: pointer;
     font-size: 3rem;
     margin-bottom: 20px;
@@ -105,8 +122,9 @@ html, body {
 }
 
 #resetBtn {
-    color: black;
-    background-color: white;
+    color: darkgray;
+    background-color: black;
+    border: 2px solid darkgray;
     width: 200px;
     height: 40px;
     border-radius: 6px;
@@ -126,7 +144,11 @@ html, body {
 }
 
 #recDel, #numDel {
+    color: darkgray;
+    background-color: black;
+    border: 2px solid darkgray;
 width: 100px;
+height: 30px;
 font-size: 0.8rem;
 margin: 20px;
 justify-content: center;
@@ -136,4 +158,34 @@ align-items: center;
 .guide {
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+
+#submitBtn {
+    top: 39.5%;
+    right: 44.66%;
+    transform: translateY(-50%);
+
+    width: 205px;
+    height: 75px;
+
+    color: darkgray;
+    background-color: black;
+    border: 3px solid darkgray;
+    border-radius: 5px;
+
+    font-size: 3rem;
+
+    position: fixed;
+}
+
+#submitBtn:hover {
+    background-color: grey;
+}
+
+#ty {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
 }

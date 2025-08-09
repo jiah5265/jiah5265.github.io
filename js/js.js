@@ -31,6 +31,9 @@ function startGauge() {//when pressing button
 }
 
 function stopGauge() {//when releasing button
+    if (phoneNumber.length >= 10) {
+        return;
+    }
     const duration = Date.now() - time;
     gaugeFill.style.width = "0%";
 
@@ -96,6 +99,7 @@ resetBtn.addEventListener("click", () => {
     number.textContent = "Phone Number: ";
     gaugeFill.style.width = "0%";
     document.querySelector(".guide").style.opacity = 0;
+    submitBtn.style.display = "none";
 });
 
 recDel.addEventListener("click", () => {
@@ -124,10 +128,29 @@ function updateSubmitButton() {
 }
 
 submitBtn.addEventListener("click", () => {
-    document.body.innerHTML = "Thank you for your phone number!";
+    document.body.innerHTML = 
+        `<div id="ty">
+        Thank you for your phone number!<br>
+        ${phoneNumber}
+        </div>`;
 
     const thankYouDiv = document.createElement("div");
     thankYouDiv.style.fontSize = "3rem";
     document.body.appendChild(thankYouDiv);
     
 });
+
+function moveGuideRandomly() {
+    const guideBox = document.querySelector(".guide");
+
+    const maxX = window.innerWidth - guideBox.offsetWidth;
+    const maxY = window.innerHeight - guideBox.offsetHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    guideBox.style.left = `${randomX}px`;
+    guideBox.style.top = `${randomY}px`;
+}
+
+setInterval(moveGuideRandomly, 700);
